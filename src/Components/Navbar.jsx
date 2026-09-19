@@ -21,7 +21,7 @@ const Navbar = () => {
             <div className="container-fluid pe-0">
 
                 <div className={`logo`}>
-                    <Link className=" navbar-brand" to="#"><FaUtensils className='m-3' color='white' /><span className='text-white'>MEAL FINDER</span></Link>
+                    <Link className=" navbar-brand" to="/"><FaUtensils className='m-3' color='white' /><span className='text-white'>MEAL FINDER</span></Link>
                 </div>
 
                 <div className='hamburger-menu' >
@@ -31,15 +31,19 @@ const Navbar = () => {
 
 
                     {isOpen && (
-                        <>
-                       
-                        <ul className={styles.sidebar}>
-                             <IoClose  className={styles.closeicon} onClick={menuHandler}/>
-                            {data?.categories?.map((category,i) => (
-                                <li key={i} className={styles.menuitem}>{category.strCategory}</li>
-                            ))}
-                        </ul>
-                        </>
+                        <div>
+
+                            <ul className={styles.sidebar}>
+                                <IoClose className={styles.closeicon} onClick={menuHandler} />
+                                {data?.categories?.map((category, i) => (
+                                    <li key={i} className={styles.menuitem}>
+                                        <Link to={`/category/${category.strCategory}`} onClick={menuHandler}>
+                                            {category.strCategory}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     )
                     }
                 </div>
