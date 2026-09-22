@@ -1,12 +1,13 @@
 import React from 'react'
-import { useParams, Link } from 'react-router'
 import { useFetch } from '../Hooks/useFetch'
 import styles from '../styles/catdetails.module.css'
 import Navbar from './Navbar'
 import Hero from './Hero'
 import SearchBar from './SearchBar'
+import { Link, useParams } from 'react-router-dom'
 
 const CategoryDetail = () => {
+    
     const { categoryName } = useParams();
 
     const categoryData = useFetch("https://www.themealdb.com/api/json/v1/1/categories.php");

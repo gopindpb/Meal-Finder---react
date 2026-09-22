@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styles from '../styles/navbar.module.css'
 import { FaUtensils, FaBars } from "react-icons/fa";
-import { Link } from 'react-router'
 import { useFetch } from '../Hooks/useFetch';
 import { IoClose } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 

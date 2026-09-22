@@ -11,10 +11,19 @@ export const useFetch = (api) => {
 
         
     }, [api])
-
+    
     const fetchUserData = async() => {
-        const response = await axios(api)
+
+        try{
+            const response = await axios(api)
         setData(response.data)
+
+        }catch(error){
+            console.log(error);
+            
+        }
+
+        
         
     }
     
